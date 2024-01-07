@@ -153,3 +153,33 @@ int main ()
 
 void *memcpy(void *str1, const void *str2, size_t n)
 
+#include <string.h>
+ 
+int main ()
+{
+   const char src[50] = "http://www.runoob.com";
+   char dest[50];
+ 
+   memcpy(dest, src, strlen(src)+1);   //複製src到dest
+   printf("dest = %s\n", dest);
+   
+   return(0);
+}
+
+#include <stdio.h>
+#include<string.h>
+ 
+int main()
+ 
+{
+  char *s="http://www.runoob.com";
+  char d[20];
+  memcpy(d, s+11, 6);      // 从第 11 個字符(r)開始複製，連續複製6個字符(runoob)
+                           // 或者 memcpy(d, s+11*sizeof(char), 6*sizeof(char));
+  d[6]='\0';
+  printf("%s", d);
+  return 0;
+}
+
+//出處:https://www.runoob.com/cprogramming/c-function-memcpy.html
+
